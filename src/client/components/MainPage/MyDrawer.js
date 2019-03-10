@@ -8,12 +8,11 @@ import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar'
 import { withStyles } from '@material-ui/core/styles'
 // Import company logo file
-import Logo from '../../assets/Logo.png'
+import Logo from '../../assets/img/Logo.png'
 // Import material-ui-icons
 import VerifiedUser from '@material-ui/icons/VerifiedUser'
 import Settings from '@material-ui/icons/Settings'
 import Help from '@material-ui/icons/Help'
-import CompareArrows from '@material-ui/icons/CompareArrows'
 
 // Import from react-router
 import { Link } from 'react-router-dom'

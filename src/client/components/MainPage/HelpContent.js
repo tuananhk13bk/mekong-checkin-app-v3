@@ -1,6 +1,18 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
+// import image
+import GE from '../../assets/img/partner/GE.png'
+import Kepware from '../../assets/img/partner/Kepware.png'
+import ServelecControls from '../../assets/img/partner/ServelecControls.png'
+import Wonderware from '../../assets/img/partner/Wonderware.png'
+import Siemens from '../../assets/img/partner/Siemens.png'
+import Lantronix from '../../assets/img/partner/Lantronix.png'
+import Eldon from '../../assets/img/partner/Eldon.png'
+import DetTronics from '../../assets/img/partner/DetTronics.png'
+import Rittal from '../../assets/img/partner/Rittal.png'
+import RockwellAutomation from '../../assets/img/partner/RockwellAutomation.png'
+import RedLion from '../../assets/img/partner/RedLion.png'
 
 const styles = theme => ({
   root: {
@@ -49,58 +61,58 @@ const HelpContent = ({ classes }) => (
     </Typography>
     <div>
       <img 
-        src={require('../../assets/partner/GE.png')} 
-        alt="Logo"
+        src={GE} 
+        alt="GE"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/Kepware.png')} 
-        alt="Logo"
+        src={Kepware} 
+        alt="Kepware"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/ServelecControls.png')} 
-        alt="Logo"
+        src={ServelecControls} 
+        alt="ServelecControls"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/Wonderware.png')} 
-        alt="Logo"
+        src={Wonderware} 
+        alt="Wonderware"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/Siemens.jpg')} 
-        alt="Logo"
+        src={Siemens} 
+        alt="Siemens"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/Lantronix.png')} 
-        alt="Logo"
+        src={Lantronix} 
+        alt="Lantronix"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/Eldon.png')} 
-        alt="Logo"
+        src={Eldon} 
+        alt="Eldon"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/DetTronics.png')} 
-        alt="Logo"
+        src={DetTronics} 
+        alt="DetTronics"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/Rittal.png')} 
-        alt="Logo"
+        src={Rittal} 
+        alt="Rittal"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/RockwellAutomation.png')} 
-        alt="Logo"
+        src={RockwellAutomation} 
+        alt="RockwellAutomation"
         className={classes.img}
       ></img>
       <img 
-        src={require('../../assets/partner/RedLion.png')} 
-        alt="Logo"
+        src={RedLion} 
+        alt="RedLion"
         className={classes.img}
       ></img>
     </div>

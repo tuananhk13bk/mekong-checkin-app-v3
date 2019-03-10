@@ -1,11 +1,11 @@
 import {
   TOGGLE_DIALOG,
-  CLEAR_ALL_STATE
-} from '../actions/actionType'
+  CLEAR_ALL_STATE,
+} from '../actions/actionTypes'
 import DataProcess from '../utils/DataProcess'
 
 const initState = {
-  dialogIsOpen: false
+  dialogIsOpen: false,
 }
 
 const dialog = (state=initState, action) => {

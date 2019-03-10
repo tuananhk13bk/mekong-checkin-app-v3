@@ -1,9 +1,9 @@
 import React from 'react'
-import MainPage from '../pages/MainPage'
-import WaitPage1 from '../pages/WaitPage1'
-import WaitPage2 from '../pages/WaitPage2'
-import { HashRouter, Route, Switch, Link } from 'react-router-dom'
-import VerifyContent from './MainPage/Main/VerifyContent'
+import MainPage from './MainPage/MainPage'
+import WaitPage from './WaitPage/WaitPage'
+import WaitPageSecond from '../containers/WaitPageSecond/WaitPageSecond'
+import { HashRouter, Route, Switch } from 'react-router-dom'
+import VerifyContent from './MainPage/VerifyContent/VerifyContent'
 import SettingsContent from './MainPage/SettingsContent'
 import HelpContent from './MainPage/HelpContent'
 import styled, { keyframes } from "styled-components";
@@ -95,12 +95,12 @@ const App = () => {
                 <Switch location={location}>
                   <Route exact path="/" render={() => (
                     <HomePageElm>
-                      <WaitPage1/>
+                      <WaitPage/>
                     </HomePageElm>
                   )} />
                   <Route path="/next" render={() => (
                     <DetailsPageElm>
-                      <WaitPage2/>
+                      <WaitPageSecond />
                     </DetailsPageElm>
                   )} />
                   <Route path="/main" render={() => (

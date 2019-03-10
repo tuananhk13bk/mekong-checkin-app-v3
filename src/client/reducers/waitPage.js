@@ -1,20 +1,14 @@
 import {
   CHANGE_ERROR_MESSAGE,
-  GET_VALID_RFID_TAG_NUM,
-  GET_ALL_VALID_ORDER,
-  CHANGE_RFID_TAG_NUM_TEXT_FIELD,
-  CLEAR_ALL_STATE
-  // SUBMIT_RFID_TAG_NUM
-} from '../actions/actionType'
+  CHANGE_RFID_CODE_IN_TEXT_FIELD,
+  CLEAR_ALL_STATE,
+} from '../actions/actionTypes'
 import DataProcess from '../utils/DataProcess'
 
 const initState = {
-  rfidTagNumOnSearch: '',
+  rfidCodeOnSearch: '',
   textFieldIsError: false,
   errorMessage: '',
-  validRfidTagNumList: [],
-  validOrder: [],
-  orderOnSelect: {}
 }
 
 const waitPage = (state=initState, action) => {
@@ -25,20 +19,10 @@ const waitPage = (state=initState, action) => {
         errorMessage: action.error,
         textFieldIsError: action.isError
       }
-    case GET_VALID_RFID_TAG_NUM:
+    case CHANGE_RFID_CODE_IN_TEXT_FIELD:
       return {
         ...state,
-        validRfidTagNumList: action.value
-      }
-    case GET_ALL_VALID_ORDER:
-      return {
-        ...state,
-        validOrder: action.list
-      }
-    case CHANGE_RFID_TAG_NUM_TEXT_FIELD:
-      return {
-        ...state,
-        rfidTagNumOnSearch: action.value,
+        rfidCodeOnSearch: action.value,
       }
     case CLEAR_ALL_STATE:
       return DataProcess.mergeTwoObject(state, initState)

@@ -1,22 +1,88 @@
 import {
-  SUBMIT_RFID_TAG_NUM,
-  CHANGE_RFID_TAG_NUM_TEXT_FIELD,
+  SUBMIT_RFID_CODE,
+  CHANGE_RFID_CODE_IN_TEXT_FIELD,
   TOGGLE_DIALOG,
   CHANGE_ERROR_MESSAGE,
   CLEAR_ALL_STATE,
-  SUBMIT_CHECKIN
-} from './actionType'
+} from './actionTypes'
 
-export const submitRfidTagNum = (order) => {
+export const submitRfidCode = (order) => {
+  const {
+    statusId,
+    workOrderCode,
+    rfidCode,
+    rfidTagNum,
+    rfidSysNum,
+
+    cusFullName,
+    productFullName,
+    amount,
+    unit,
+    productType,
+    status,
+
+    driverFullName,
+    driverIdNum,
+    driverIdExpdate,
+    driverLicNum,
+    driverLicExpdate,
+    fireFightingCertNum,
+    fireFightingExpdate,
+
+    transCoFullName,
+    plateNum,
+    ownerFullName,
+    vehicleRegCertNum,
+    vehicleRegCertExpdate,
+    chemicalTransLicNum,
+    chemicalTransLicExpdate,
+    assuranceExpdate,
+    vehicleInspectationCertExpdate
+  } = order
   return {
-    type: SUBMIT_RFID_TAG_NUM,
-    order
+    type: SUBMIT_RFID_CODE,
+    headerOnSelect: {
+      statusId,
+      driverFullName,
+      workOrderCode,
+      rfidCode,
+      rfidTagNum,
+      rfidSysNum
+    },
+    customerOnSelect: {
+      cusFullName,
+      productFullName,
+      amount,
+      unit,
+      productType,
+      status,
+    },
+    driverOnSelect: {
+      driverFullName,
+      driverIdNum,
+      driverIdExpdate,
+      driverLicNum,
+      driverLicExpdate,
+      fireFightingCertNum,
+      fireFightingExpdate,
+    },
+    transCoOnSelect: {
+      transCoFullName,
+      plateNum,
+      ownerFullName,
+      vehicleRegCertNum,
+      vehicleRegCertExpdate,
+      chemicalTransLicNum,
+      chemicalTransLicExpdate,
+      assuranceExpdate,
+      vehicleInspectationCertExpdate
+    }
   }
 }
 
-export const changeRfidTagNumTextField = (value) => {
+export const changeRfidCodeInTextField = (value) => {
   return {
-    type: CHANGE_RFID_TAG_NUM_TEXT_FIELD,
+    type: CHANGE_RFID_CODE_IN_TEXT_FIELD,
     value
   }
 }
@@ -46,4 +112,3 @@ export const submitCheckin = () => {
     type: SUBMIT_CHECKIN
   }
 }
-

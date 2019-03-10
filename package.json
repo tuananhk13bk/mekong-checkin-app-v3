@@ -2,7 +2,7 @@
   "name": "mekong-checkin-app-v2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "electronApp.js",
   "scripts": {
     "start": "webpack-dev-server --port 3000 --compress --mode development",
     "dev": "webpack --mode development --progress",

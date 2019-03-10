@@ -1,9 +1,9 @@
-const createRfidEvent = require('./handleRfidOnRead/createRfidEvent')
-const handleRfidOnRead = require('./handleRfidOnRead')
-const readValidOrder = require('./readValidOrder')
+const readValidOrderByManual = require('./readValidOrderByManual')
+const createRfidEvent = require('./createRfidEvent')
+const updateOrderStatus = require('./updateOrderStatus')
 
 module.exports = {
+  readValidOrderByManual,
   createRfidEvent,
-  handleRfidOnRead,
-  readValidOrder
+  updateOrderStatus
 }

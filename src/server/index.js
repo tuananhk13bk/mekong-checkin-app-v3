@@ -6,8 +6,9 @@ const server = require('http').createServer(app)
 const bodyParser = require('body-parser')
 // import APIs
 const {
-  handleRfidOnRead,
-  readValidOrder
+  readValidOrderByManual,
+  createRfidEvent,
+  updateOrderStatus
 } = require('./apis/db')
 // use body-parser
 app.use(bodyParser.json())
@@ -20,10 +21,14 @@ app.use(
 // Use static file (build from React)
 app.use(express.static('./dist'))
 
-// server response
-app.get('/api/db/get/valid-order/:rfidTagNum', readValidOrder)
+// :rfid is object include { orderStatusid, rfidCode, arrivalDate }
+app.get('/api/db/valid-order/:rfid', readValidOrderByManual)
+
+app.post('/api/db/rfid-event', createRfidEvent)
+
+app.put('/api/db/order/:workOrderCode', updateOrderStatus)
 // app.put('/api/db/put/:id', updateOrderStatus)
-app.post('/api/db/post/:rfidTagNum', handleRfidOnRead)
+// app.post('/api/db/post/:rfidTagNum', handleRfidOnRead)
 
 // send data to React client when COM port has data
 // port.on('data', data => io.emit('data', decoder.end(data)))

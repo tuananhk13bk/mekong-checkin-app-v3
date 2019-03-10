@@ -1,14 +1,12 @@
 // Import child reducers
-import rfidCodeReducer from './rfidCodeReducer'
+import rfid from './rfid'
 import dialog from './dialog'
-import orderPaper from './orderPaper'
 import waitPage from './waitPage'
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-  rfidCodeReducer,
+  rfid,
   dialog,
-  orderPaper,
   waitPage
 })
 

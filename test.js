@@ -1,20 +1,14 @@
-import React, { Component } from 'react'
-
-export default class test extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+let obj = {
+  a: 1,
+  b: 2,
+  c: 3
 }
 
-const mapStateToProps = (state) => ({
-  
-})
-
-const mapDispatchToProps = {
-  
+let test = {
+  a: 4,
+  b: 8,
+  c: 12
 }
+obj = test
 
+console.log(obj)

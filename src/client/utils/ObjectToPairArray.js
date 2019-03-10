@@ -1,4 +1,4 @@
-const ObjectToPairArray = (inputArr) => {
+const objectToPairArray = (inputArr) => {
   const result = inputArr.reduce((accum, elm) => {
     const accumCurrent = [elm.workOrderCode, elm.rfidTagNum]
     accum.push(accumCurrent)
@@ -7,5 +7,5 @@ const ObjectToPairArray = (inputArr) => {
   return result
 }
 
-export default ObjectToPairArray
+export default objectToPairArray
 // module.exports = ObjectToPairArray

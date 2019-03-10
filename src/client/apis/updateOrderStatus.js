@@ -1,16 +1,10 @@
 
+import axios from 'axios'
 
-async function updateOrderStatus(id, data) {
+async function updateOrderStatus(workOrderCode, statusId) {
   try {
-    await fetch(`/api/db/put/${id}`, {
-      // await fetch(`http://localhost:8000/api/db/put/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
+    const res = await axios.put(`/api/db/order/${workOrderCode}`, { statusId })
+    return
   }
   catch (err) {
     console.error(`Error is: ${err}`)
