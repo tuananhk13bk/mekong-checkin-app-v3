@@ -22,7 +22,7 @@ app.use(
 app.use(express.static('./dist'))
 
 // :rfid is object include { orderStatusid, rfidCode, arrivalDate }
-app.get('/api/db/valid-order/:rfid', readValidOrderByManual)
+app.post('/api/db/valid-order/', readValidOrderByManual)
 
 app.post('/api/db/rfid-event', createRfidEvent)
 
@@ -34,4 +34,4 @@ app.put('/api/db/order/:workOrderCode', updateOrderStatus)
 // port.on('data', data => io.emit('data', decoder.end(data)))
 
 // server listen on port ...
-server.listen(8000, (req, res) => console.log(`Server is listening on port 8000`))
+server.listen(11432, (req, res) => console.log(`Server is listening on port 11432`))

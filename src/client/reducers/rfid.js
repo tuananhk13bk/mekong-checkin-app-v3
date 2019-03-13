@@ -1,7 +1,6 @@
 import {
   SUBMIT_RFID_CODE,
   CLEAR_ALL_STATE,
-  SUBMIT_CHECKIN
 } from '../actions/actionTypes'
 // import my ultility
 import DataProcess from '../utils/DataProcess'
@@ -64,11 +63,6 @@ const rfid = (state=initState, action) => {
     case CLEAR_ALL_STATE:
       return DataProcess.mergeTwoObject(state, initState)
 
-    case SUBMIT_CHECKIN:
-      return {
-        ...state,
-        dialogIsOpen: true
-      }
     default:
       return state
   }

@@ -5,15 +5,14 @@ const readValidOrderByManual = async(orderStatusId1, orderStatusId2, rfidCode, a
   try {
     let result = {}
     if (rfidCode === '') return result
-    // const res = await axios.get(`http://localhost:8000/api/db/valid-order/${rfidCode}`)
-    const rfid = JSON.stringify({
+    const rfid = {
       orderStatusId1,
       orderStatusId2,
       rfidCode,
       arrivalDate
-    })
-    console.log(rfid)
-    const res = await axios.get(`/api/db/valid-order/${rfid}`)
+    }
+    // const res = await axios.post(`http://localhost:11432/api/db/valid-order/`, rfid)
+    const res = await axios.post(`/api/db/valid-order/`, rfid)
     
     if (res.data.length === 0) {
       result = {}

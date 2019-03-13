@@ -59,22 +59,22 @@ WHERE
 `
 
 const readValidOrderByManual = async(req, res) => {
-  const parsedParams = JSON.parse(req.params.rfid)
-  const { orderStatusId1, orderStatusId2, rfidCode, arrivalDate } = parsedParams
+  const { orderStatusId1, orderStatusId2, rfidCode, arrivalDate } = req.body
   const client = await dbConnect()
-  try {
-    const result = await client.query(QUERY_STRING, [
-      orderStatusId1, orderStatusId2, rfidCode, arrivalDate
-    ])
-    res.status(200).json(camelcaseKeys(result.rows))
-  }
-  catch(err) {
-    console.log(err)
-  }
-  finally {
-    client.release()
-    console.log('Db released')
-  }
+  return (
+    async () => {
+      try {
+        const result = await client.query(QUERY_STRING, [
+          orderStatusId1, orderStatusId2, rfidCode, arrivalDate
+        ])
+        res.status(200).json(camelcaseKeys(result.rows))
+      }
+      finally {
+        client.release()
+        console.log('Db released')
+      }
+    }
+  )().catch(e => console.error(e.message, e.stack))
 }
 
 module.exports = readValidOrderByManual

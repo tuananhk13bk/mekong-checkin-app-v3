@@ -11,7 +11,7 @@ import ValidationStatusIcon from './ValidationStatusIcon'
 const styles = theme => ({
   paper: {
     padding: 15,
-    height: '80vh'
+    height: 500
   },
   warningIcon: {
     color: theme.palette.secondary.light,

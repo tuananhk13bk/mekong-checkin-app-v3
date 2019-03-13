@@ -6,16 +6,17 @@ const updateOrderStatus = async(req, res) => {
   const workOrderCode = req.params.workOrderCode
   const { statusId } = req.body
   const client = await dbConnect()
-  try {
-    await client.query(QUERY_STRING, [workOrderCode, statusId])
-    res.status(200).send(`Status modified with order code: ${workOrderCode}`)
-  }
-  catch(err) {
-    throw err
-  }
-  finally {
-    client.release()
-  }
+  return (
+    async () => {
+      try {
+        await client.query(QUERY_STRING, [workOrderCode, statusId])
+        res.status(200).send(`Status modified with order code: ${workOrderCode}`)
+      }
+      finally {
+        client.release()
+      }
+    }
+  )().catch(e => console.error(e.message, e.stack))
 }
 
 module.exports = updateOrderStatus

@@ -8,7 +8,7 @@ import { AUTHENTICATED, IN_PROGRESS } from '../../../../constants/orderStatusId'
 const styles = theme => ({
   button: {
     width: '100%',
-    height: '10vh'
+    flex: 1,
   }
 })
 

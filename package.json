@@ -4,7 +4,7 @@
   "description": "",
   "main": "electronApp.js",
   "scripts": {
-    "start": "webpack-dev-server --port 3000 --compress --mode development",
+    "start": "webpack-dev-server --port 3789 --compress --mode development",
     "dev": "webpack --mode development --progress",
     "build": "webpack --mode production --progress",
     "electron": "electron ."

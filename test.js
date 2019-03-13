@@ -1,14 +1,27 @@
-let obj = {
-  a: 1,
-  b: 2,
-  c: 3
-}
+// process.env.UV_THREADPOOL_SIZE = 2
 
-let test = {
-  a: 4,
-  b: 8,
-  c: 12
-}
-obj = test
+const crypto = require('crypto')
 
-console.log(obj)
+const start = Date.now()
+crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+  console.log('1:', Date.now() - start)
+})
+
+crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+  console.log('2:', Date.now() - start)
+})
+
+crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+  console.log('3:', Date.now() - start)
+})
+
+crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+  console.log('4:', Date.now() - start)
+})
+
+console.log(process.env.UV_THREADPOOL_SIZE)
+
+crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
+  console.log('5:', Date.now() - start)
+})
+
